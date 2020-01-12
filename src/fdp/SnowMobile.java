@@ -13,5 +13,11 @@ public class SnowMobile implements Motorcycle
     {
       return 33333.323;
     }
+
+    @Override
+    public String getName() 
+    {
+       return "Snow Mobile"; 
+    }
     
 }

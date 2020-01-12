@@ -1,17 +1,20 @@
 package fdp;
 
+import java.util.ArrayList;
 
 public class Client
 {
   
   public void start()
   {
-     Factory factory = new FactoryIMP();
-     Motorcycle motorcycle = factory.createMotorcycle("water");
-     Motorcycle motorcycle2 = factory.createMotorcycle("snow");
+       ArrayList<Motorcycle> motorcycleList = new ArrayList<>();
+       Factory factory = FactoryIMP.getInstance();
 
-     System.out.println("Water Motorcycle " + "\n" + "Price: " +  motorcycle.getPrice());
-     System.out.println("Snow Motorcycle " + "\n" + "Price: " +  motorcycle2.getPrice());
+       motorcycleList.add(factory.createMotorcycle("WaterMotorcycle"));
+       motorcycleList.add(factory.createMotorcycle("SnowMobile"));
 
+      motorcycleList.forEach((m) -> {
+          System.out.println(m.getName() +".\n"+ "Price: $"+ m.getPrice());
+      });
   }
 }
